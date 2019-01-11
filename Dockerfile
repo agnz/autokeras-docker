@@ -4,8 +4,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends build-essential
     apt-get purge --autoremove -y curl && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install tf-nightly-gpu
-RUN pip3 install https://download.pytorch.org/whl/cu100/torch-1.0.0-cp36-cp36m-linux_x86_64.whl
+RUN pip3 install --no-cache-dir tf-nightly-gpu
+RUN pip3 install --no-cache-dir https://download.pytorch.org/whl/cu100/torch-1.0.0-cp36-cp36m-linux_x86_64.whl
 RUN git clone https://github.com/jhfjhfj1/autokeras.git
 RUN cd autokeras && \
     sed '/tensorflow/ d' -i setup.py && \
