@@ -12,3 +12,4 @@ RUN cd autokeras && \
     python3 setup.py install && \
     cd .. && \
     rm -rf autokeras
+RUN pip3 install jupyter
